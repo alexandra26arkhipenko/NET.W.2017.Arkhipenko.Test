@@ -11,8 +11,13 @@ namespace Task2.Tests
             RandomFileGenerator randomBytesFileGenerator = new RandomBytesFileGenerator();
             RandomFileGenerator randomCharFileGenerator = new RandomCharsFileGenerator();
 
+
             Console.WriteLine(randomBytesFileGenerator.WorkingDirectory);
+            randomBytesFileGenerator.GenerateFiles(1, 10);
+
             Console.WriteLine(randomCharFileGenerator.WorkingDirectory);
+            randomCharFileGenerator.GenerateFiles(1, 10);
+
 
             Console.ReadKey();
         }
