@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Task4.Solution
 {
-    public class Mean : IPredicate
+    public class Mean : IAverageInterface
     {
         public double AveragingMethod(List<double> values)
         {

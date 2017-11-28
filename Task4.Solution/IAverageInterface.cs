@@ -2,7 +2,7 @@
 
 namespace Task4.Solution
 {
-    public interface IPredicate
+    public interface IAverageInterface
     {
         double AveragingMethod(List<double> values);
     }
