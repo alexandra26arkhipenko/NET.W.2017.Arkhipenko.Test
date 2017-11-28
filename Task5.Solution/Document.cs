@@ -16,7 +16,7 @@ namespace Task5
             this.parts = new List<DocumentPart>(parts);
         }
 
-        public string ToHtml(IConverter converter)
+        public string ToConvert(IConverter converter)
         {
             string output = string.Empty;
 
@@ -28,28 +28,8 @@ namespace Task5
             return output;
         }
 
-        public string ToPlainText(IConverter converter)
-        {
-            string output = string.Empty;
+        
 
-            foreach (DocumentPart part in this.parts)
-            {
-                output += $"{part.Converter(converter)}\n";
-            }
-
-            return output;
-        }
-
-        public string ToLaTeX(IConverter converter)
-        {
-            string output = string.Empty;
-
-            foreach (DocumentPart part in this.parts)
-            {
-                output += $"{part.Converter(converter)}\n";
-            }
-
-            return output;
-        }
+        
     }
 }
