@@ -19,24 +19,23 @@ namespace Task3
             stock.Register(this);
         }
 
-        public EventHandler Info = delegate{};
-
-
         public void Update(object info)
         {
             StockInfo sInfo = (StockInfo)info;
 
-
+            if (sInfo.Euro > 40)
+                Console.WriteLine("Банк {0} продает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
+            else
+                Console.WriteLine("Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
+        }
+        public void Update(object sender, StockInfo e)
+        {
+            StockInfo sInfo = e;
 
             if (sInfo.Euro > 40)
-                OnInfo()+= Console.WriteLine("Банк {0} продает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
-            // else
-            //   Console.WriteLine("Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
-        }
-
-        public void OnInfo()
-        {
-            Info?.Invoke();
+                Console.WriteLine("Банк {0} продает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
+            else
+                Console.WriteLine("Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
         }
     }
 }

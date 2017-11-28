@@ -9,5 +9,6 @@ namespace Task3
     public interface IObserver
     {
         void Update(object observeble);
+        void Update(object sender, StockInfo e);
     }
 }

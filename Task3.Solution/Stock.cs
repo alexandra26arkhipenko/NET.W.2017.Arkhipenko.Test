@@ -8,33 +8,39 @@ namespace Task3
 {
     public class Stock : IObservable
     {
-        private StockInfo stocksInfo;
 
-        private List<IObserver> observers;
+        private readonly StockInfo _stocksInfo;
+
+        //private readonly List<IObserver> observers;
+        private EventHandler<StockInfo> _stockInfoEventHandler;
 
         public Stock()
         {
-            observers = new List<IObserver>();
-            stocksInfo = new StockInfo();
+            _stocksInfo = new StockInfo();
         }
 
-        public void Register(IObserver observer) => observers.Add(observer);
+        public void Register(IObserver observer)
+        {
+            _stockInfoEventHandler += observer.Update;
+        }
 
-        public void Unregister(IObserver observer) => observers.Remove(observer);
+        public void Unregister(IObserver observer)
+        {
+            if (_stockInfoEventHandler != null)
+                _stockInfoEventHandler -= observer.Update;
+        }
+
 
         public void Notify()
         {
-            foreach (IObserver o in observers)
-            {
-                o.Update(stocksInfo);
-            }
+            _stockInfoEventHandler.Invoke(this, _stocksInfo);
         }
 
         public void Market()
         {
-            Random rnd = new Random();
-            stocksInfo.USD = rnd.Next(20, 40);
-            stocksInfo.Euro = rnd.Next(30, 50);
+            var rnd = new Random();
+            _stocksInfo.USD = rnd.Next(20, 40);
+            _stocksInfo.Euro = rnd.Next(30, 50);
             Notify();
         }
     }

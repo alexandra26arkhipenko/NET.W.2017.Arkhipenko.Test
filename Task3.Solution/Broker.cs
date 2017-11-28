@@ -19,8 +19,6 @@ namespace Task3
             stock.Register(this);
         }
 
-        
-
         public void Update(object info)
         {
             StockInfo sInfo = (StockInfo)info;
@@ -29,6 +27,16 @@ namespace Task3
                 Console.WriteLine("Брокер {0} продает доллары;  Курс доллара: {1}", this.Name, sInfo.USD);
             else
                 Console.WriteLine("Брокер {0} покупает доллары;  Курс доллара: {1}", this.Name, sInfo.USD);
+        }
+
+        public void Update(object sender, StockInfo e)
+        {
+            StockInfo sInfo = e;
+
+            if (sInfo.Euro > 40)
+                Console.WriteLine("Банк {0} продает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
+            else
+                Console.WriteLine("Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfo.Euro);
         }
 
         public void StopTrade()
