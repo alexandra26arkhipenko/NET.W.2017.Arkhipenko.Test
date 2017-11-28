@@ -1,6 +1,6 @@
 ﻿using System;
+using Task2.Solution.AbstractClass;
 using Task2.Solution.Implementation;
-using Task2.Solution.Interface;
 
 namespace Task2.Tests
 {
@@ -8,8 +8,8 @@ namespace Task2.Tests
     {
         static void Main()
         {
-            IRandomFileGenerator randomBytesFileGenerator = new RandomBytesFileGenerator();
-            IRandomFileGenerator randomCharFileGenerator = new RandomCharsFileGenerator();
+            RandomFileGenerator randomBytesFileGenerator = new RandomBytesFileGenerator();
+            RandomFileGenerator randomCharFileGenerator = new RandomCharsFileGenerator();
 
             Console.WriteLine(randomBytesFileGenerator.WorkingDirectory);
             Console.WriteLine(randomCharFileGenerator.WorkingDirectory);
