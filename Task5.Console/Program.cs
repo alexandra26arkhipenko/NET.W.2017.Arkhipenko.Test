@@ -6,7 +6,7 @@
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             List<DocumentPart> parts = new List<DocumentPart>
                 {
@@ -17,11 +17,13 @@
 
             Document document = new Document(parts);
 
-            Console.WriteLine(document.ToHtml());
+            Console.WriteLine(document.ToHtml(new ConverterToHtml()));
 
-            Console.WriteLine(document.ToPlainText());
+            Console.WriteLine(document.ToPlainText(new ConvertToPlainText()));
 
-            Console.WriteLine(document.ToLaTeX());
+            Console.WriteLine(document.ToLaTeX(new ConverterToLaTex()));
+
+            Console.ReadKey();
         }
     }
 }
