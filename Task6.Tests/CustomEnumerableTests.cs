@@ -46,10 +46,8 @@ namespace Task6.Tests
             int i = 0;
             foreach (var el in Generator.Generate(expected.Length, 1, 1, new Formula3()))
             {
-                Assert.AreEqual(el, expected[i++]);
+                Assert.AreEqual(el, expected[i++], 0.0000000000001);
             }
-
-            Assert.Inconclusive();
         }
     }
 }
