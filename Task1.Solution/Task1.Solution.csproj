@@ -40,10 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementation\PasswordCheckerService.cs" />
-    <Compile Include="Implementation\SqlRepository.cs" />
-    <Compile Include="Interfaces\IPasswordCheckerService.cs" />
+    <Compile Include="Interfaces\IPasswordService.cs" />
+    <Compile Include="Service\PasswordCheckerService.cs" />
+    <Compile Include="Repository\SqlRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ICheckPassword.cs" />
+    <Compile Include="Implementations\PasswordEmpty.cs" />
+    <Compile Include="Implementations\PasswordGreaterThanfifteen.cs" />
+    <Compile Include="Implementations\PasswordIsLetters.cs" />
+    <Compile Include="Implementations\PasswordIsNumbers.cs" />
+    <Compile Include="Implementations\PasswordLessThanSeven.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

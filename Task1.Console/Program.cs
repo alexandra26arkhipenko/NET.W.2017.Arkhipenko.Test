@@ -12,8 +12,8 @@ namespace Task1.Console
         static void Main(string[] args)
         {
             
-            IPasswordCheckerService passwordChecker = new PasswordCheckerService(new SqlRepository());
-            System.Console.WriteLine(passwordChecker.VerifyPassword("12485"));
+            IPasswordService passwordChecker = new PasswordCheckerService(new SqlRepository());
+            System.Console.WriteLine(passwordChecker.VerifyPassword("12485", new PasswordEmpty(), new PasswordLessThanSeven()));
 
 
             System.Console.ReadKey();
