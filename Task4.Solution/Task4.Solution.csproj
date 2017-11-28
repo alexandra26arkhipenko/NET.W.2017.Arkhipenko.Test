@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AverageDelegat.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="IAverageInterface.cs" />
     <Compile Include="Mean.cs" />
