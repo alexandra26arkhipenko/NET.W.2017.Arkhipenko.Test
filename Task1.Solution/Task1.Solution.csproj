@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IPasswordService.cs" />
     <Compile Include="Service\PasswordCheckerService.cs" />
     <Compile Include="Repository\SqlRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />

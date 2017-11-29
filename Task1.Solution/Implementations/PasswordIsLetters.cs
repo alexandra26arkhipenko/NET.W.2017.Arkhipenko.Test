@@ -9,8 +9,7 @@ namespace Task1
         {
             if (!password.Any(char.IsLetter))
                 return Tuple.Create(false, $"{password} hasn't alphanumerical chars");
-            
-                return Tuple.Create(true, password);
+            return Tuple.Create(true, password);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 namespace Task1
 { 
 //{E:\Учеба\EPAM\NET.W.2017.LastName.Test\Task1\PasswordCheckerService.cs
-    public class PasswordCheckerService  : IPasswordService
+    public class PasswordCheckerService 
     {
         private readonly IRepository _repository;
 
