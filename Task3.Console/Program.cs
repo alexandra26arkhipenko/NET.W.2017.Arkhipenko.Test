@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Task3.Solution;
 
 namespace Task3.Console
 {
@@ -19,6 +15,8 @@ namespace Task3.Console
             broker.StopTrade();
             // имитация торгов
             stock.Market();
+
+            
 
             System.Console.ReadKey();
         }
