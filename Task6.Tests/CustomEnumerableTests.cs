@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Moq;
 using NUnit.Framework;
 using Test6.Solution;
 
@@ -48,6 +49,19 @@ namespace Task6.Tests
             {
                 Assert.AreEqual(el, expected[i++], 0.0000000000001);
             }
+        }
+
+        [Test]
+        public void Generator_CalculateMethod()
+        {
+            var formulaMock = new Mock<ICalculate<int>>();
+
+            foreach (var i in Generator.Generate(1, 1, 1, formulaMock.Object))
+            {
+
+            }
+
+            formulaMock.Verify(computer => computer.CalculateNumber(1, 1));
         }
     }
 }
