@@ -8,7 +8,7 @@ namespace Task3.Console
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var stock = new Stock();
             var bank = new Bank("UnitBank", stock);

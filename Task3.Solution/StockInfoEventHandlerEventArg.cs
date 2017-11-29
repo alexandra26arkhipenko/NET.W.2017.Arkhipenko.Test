@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    public class StockInfo
+    public class StockInfoEventHandlerEventArg
     {
-        
         public int USD { get; set; }
         public int Euro { get; set; }
     }

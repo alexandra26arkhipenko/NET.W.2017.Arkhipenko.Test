@@ -6,41 +6,29 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    public class Stock : IObservable
+    public class Stock
     {
 
-        private readonly StockInfo _stocksInfo;
+        private readonly StockInfoEventHandlerEventArg _stocksInfoEventHandlerEventArg;
 
         //private readonly List<IObserver> observers;
-        private EventHandler<StockInfo> _stockInfoEventHandler;
+        public EventHandler<StockInfoEventHandlerEventArg> StockInfoEventHandler = delegate { };
 
         public Stock()
         {
-            _stocksInfo = new StockInfo();
+            _stocksInfoEventHandlerEventArg = new StockInfoEventHandlerEventArg();
         }
 
-        public void Register(IObserver observer)
+        private void Notify()
         {
-            _stockInfoEventHandler += observer.Update;
-        }
-
-        public void Unregister(IObserver observer)
-        {
-            if (_stockInfoEventHandler != null)
-                _stockInfoEventHandler -= observer.Update;
-        }
-
-
-        public void Notify()
-        {
-            _stockInfoEventHandler.Invoke(this, _stocksInfo);
+            StockInfoEventHandler.Invoke(this, _stocksInfoEventHandlerEventArg);
         }
 
         public void Market()
         {
             var rnd = new Random();
-            _stocksInfo.USD = rnd.Next(20, 40);
-            _stocksInfo.Euro = rnd.Next(30, 50);
+            _stocksInfoEventHandlerEventArg.USD = rnd.Next(20, 40);
+            _stocksInfoEventHandlerEventArg.Euro = rnd.Next(30, 50);
             Notify();
         }
     }
