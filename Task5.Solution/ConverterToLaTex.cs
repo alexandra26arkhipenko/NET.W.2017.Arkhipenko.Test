@@ -1,4 +1,4 @@
-﻿namespace Task5
+﻿namespace Task5.Solution
 {
     public class ConverterToLaTex : IConverter
     {
