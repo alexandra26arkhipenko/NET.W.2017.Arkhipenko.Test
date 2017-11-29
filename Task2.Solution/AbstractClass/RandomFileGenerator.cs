@@ -16,7 +16,6 @@ namespace Task2.Solution.AbstractClass
                 this.WriteBytesToFile(generatedFileName, generatedFileContent);
             }
         }
-
         
         public abstract string WorkingDirectory { get; }
         public abstract string FileExtension { get; }
@@ -28,8 +27,8 @@ namespace Task2.Solution.AbstractClass
             if (!Directory.Exists(WorkingDirectory))
             {
                 Directory.CreateDirectory(WorkingDirectory);
-            }
 
+            }
             File.WriteAllBytes($"{WorkingDirectory}//{fileName}", content);
         }
     }
