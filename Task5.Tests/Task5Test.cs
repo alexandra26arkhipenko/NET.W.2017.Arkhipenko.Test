@@ -26,7 +26,8 @@ namespace Task5.Tests
             var hyperlink = new Hyperlink { Text = "google.com", Url = "https://www.google.by/" };
 
             hyperlink.Converter(converterMock.Object);
-            converterMock.Verify(converter => converter.ConvertHyperlink(It.Is<string>(text => string.Equals(text, hyperlink.Text, StringComparison.Ordinal)), It.Is<string>(url=> string.Equals(url, hyperlink.Url, StringComparison.Ordinal))), Times.Once);
+            converterMock.Verify(converter => converter.ConvertHyperlink(It.Is<string>(text => string.Equals(text, hyperlink.Text, StringComparison.Ordinal)),
+                It.Is<string>(url=> string.Equals(url, hyperlink.Url, StringComparison.Ordinal))), Times.Once);
 
         }
         [Test]
