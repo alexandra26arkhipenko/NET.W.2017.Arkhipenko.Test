@@ -54,12 +54,8 @@ namespace Task1.Solution.Tests
         {
             var repositoryMock = new Mock<IRepository>();
             var passwordChecker = new PasswordCheckerService(repositoryMock.Object);
-
             passwordChecker.VerifyPassword(password, new PasswordEmpty());
-
             repositoryMock.Verify(repository => repository.Create(It.Is<string>(s => string.Equals(s, password, StringComparison.Ordinal))), Times.Once);
         }
-
-
     }
 }

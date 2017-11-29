@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using Moq;
 using NUnit.Framework;
+using Task5.Solution;
 
 namespace Task5.Tests
 {

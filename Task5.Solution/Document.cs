@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Task5
+namespace Task5.Solution
 {
     public class Document
     {
-        private List<DocumentPart> parts;
+        private readonly List<DocumentPart> _parts;
 
         public Document(IEnumerable<DocumentPart> parts)
         {
@@ -13,14 +13,14 @@ namespace Task5
             {
                 throw new ArgumentNullException(nameof(parts));
             }
-            this.parts = new List<DocumentPart>(parts);
+            _parts = new List<DocumentPart>(parts);
         }
 
         public string ToConvert(IConverter converter)
         {
             string output = string.Empty;
 
-            foreach (DocumentPart part in this.parts)
+            foreach (DocumentPart part in _parts)
             {
                 output += $"{part.Converter(converter)}\n";
             }

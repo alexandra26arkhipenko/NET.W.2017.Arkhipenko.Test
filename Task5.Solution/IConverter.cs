@@ -1,4 +1,4 @@
-﻿namespace Task5
+﻿namespace Task5.Solution
 {
     public interface IConverter
     {

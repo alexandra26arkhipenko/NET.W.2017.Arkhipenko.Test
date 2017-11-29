@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task3.Solution;
 
 namespace Task3
 {
@@ -32,10 +33,10 @@ namespace Task3
         {
             StockInfoEventHandlerEventArg sInfoEventHandlerEventArg = e;
 
-            if (sInfoEventHandlerEventArg.Euro > 40)
-                Console.WriteLine("Банк {0} продает евро;  Курс евро: {1}", this.Name, sInfoEventHandlerEventArg.Euro);
-            else
-                Console.WriteLine("Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfoEventHandlerEventArg.Euro);
+            Console.WriteLine(
+                sInfoEventHandlerEventArg.Euro > 40
+                    ? "Банк {0} продает евро;  Курс евро: {1}"
+                    : "Банк {0} покупает евро;  Курс евро: {1}", this.Name, sInfoEventHandlerEventArg.Euro);
         }
     }
 }

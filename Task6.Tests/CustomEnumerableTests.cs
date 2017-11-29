@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
 using Test6.Solution;
 
@@ -16,7 +10,6 @@ namespace Task6.Tests
         [Test]
         public void Generator_ForSequence1()
         {
-
             int[] expected = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 
             int i = 0;
@@ -24,7 +17,6 @@ namespace Task6.Tests
             {
                 Assert.AreEqual(el, expected[i++]);
             }
-            
         }
 
         [Test]
@@ -56,7 +48,7 @@ namespace Task6.Tests
         {
             var formulaMock = new Mock<ICalculate<int>>();
 
-            foreach (var i in Generator.Generate(1, 1, 1, formulaMock.Object))
+            foreach (var element in Generator.Generate(1, 1, 1, formulaMock.Object))
             {
 
             }

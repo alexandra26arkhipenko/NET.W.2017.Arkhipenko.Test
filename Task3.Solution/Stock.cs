@@ -1,27 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Task3
+namespace Task3.Solution
 {
     public class Stock
     {
 
         private readonly StockInfoEventHandlerEventArg _stocksInfoEventHandlerEventArg;
-
-        //private readonly List<IObserver> observers;
+        
         public EventHandler<StockInfoEventHandlerEventArg> StockInfoEventHandler = delegate { };
 
         public Stock()
         {
             _stocksInfoEventHandlerEventArg = new StockInfoEventHandlerEventArg();
-        }
-
-        private void Notify()
-        {
-            StockInfoEventHandler.Invoke(this, _stocksInfoEventHandlerEventArg);
         }
 
         public void Market()
@@ -31,5 +21,12 @@ namespace Task3
             _stocksInfoEventHandlerEventArg.Euro = rnd.Next(30, 50);
             Notify();
         }
+
+        private void Notify()
+        {
+            StockInfoEventHandler.Invoke(this, _stocksInfoEventHandlerEventArg);
+        }
+
+        
     }
 }

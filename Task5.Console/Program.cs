@@ -1,4 +1,6 @@
-﻿namespace Task5.Console
+﻿using Task5.Solution;
+
+namespace Task5.Console
 {
     using System.Collections.Generic;
     using System;

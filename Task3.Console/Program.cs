@@ -16,8 +16,6 @@ namespace Task3.Console
             // имитация торгов
             stock.Market();
 
-            
-
             System.Console.ReadKey();
         }
 

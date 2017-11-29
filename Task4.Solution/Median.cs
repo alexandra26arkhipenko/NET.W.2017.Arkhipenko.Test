@@ -9,7 +9,7 @@ namespace Task4.Solution
         {
             var sortedValues = values.OrderBy(x => x).ToList();
 
-            int n = sortedValues.Count;
+            var n = sortedValues.Count;
 
             if (n % 2 == 1)
             {
