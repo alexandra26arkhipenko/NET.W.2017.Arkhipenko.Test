@@ -6,7 +6,7 @@ namespace Task2.Solution.Implementation
 {
     public class RandomBytesFileGenerator : RandomFileGenerator
     {
-        public override string WorkingDirectory => "FilesWithRandomBytes";
+        public override string WorkingDirectory => "Files With Random Bytes";
 
         public override string FileExtension => ".bytes";
 

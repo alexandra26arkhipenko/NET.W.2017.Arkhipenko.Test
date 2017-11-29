@@ -8,7 +8,7 @@ namespace Task2.Solution.Implementation
 {
     public class RandomCharsFileGenerator : RandomFileGenerator
     {
-        public override string WorkingDirectory => "FilesWithRandomChars";
+        public override string WorkingDirectory => "Files With Random Chars";
         public override string FileExtension => ".txt";
 
         protected override byte[] GenerateFileContent(int contentLength)

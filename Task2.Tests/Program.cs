@@ -11,18 +11,15 @@ namespace Task2.Tests
         {
             RandomFileGenerator randomBytesFileGenerator = new RandomBytesFileGenerator();
             RandomFileGenerator randomCharFileGenerator = new RandomCharsFileGenerator();
-
-            //string path = @"E:\Учеба\EPAM\NET.W.2017.LastName.Test\Task2.Tests\bin\Debug\FilesWithRandomBytes\23640f5e-0cea-4800-b3fc-476629d13c89.bytes";
-            Console.WriteLine(randomBytesFileGenerator.WorkingDirectory);
-            randomBytesFileGenerator.GenerateFiles(1, 10);
-
-            //var file = new StreamReader(path);
-            //Console.WriteLine(file.ReadLine());
-
-            Console.WriteLine(randomCharFileGenerator.WorkingDirectory);
-            randomCharFileGenerator.GenerateFiles(1, 10);
-
-
+            
+            Console.WriteLine();
+            if(randomBytesFileGenerator.GenerateFiles(1, 10))
+                Console.WriteLine(randomBytesFileGenerator.WorkingDirectory + " was created");
+            
+            Console.WriteLine();
+            if(randomCharFileGenerator.GenerateFiles(1, 10))
+                Console.WriteLine(randomCharFileGenerator.WorkingDirectory + " was created was created");
+           
             Console.ReadKey();
         }
     }

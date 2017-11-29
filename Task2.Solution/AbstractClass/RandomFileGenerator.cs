@@ -5,16 +5,25 @@ namespace Task2.Solution.AbstractClass
 {
     public abstract class RandomFileGenerator
     {
-        public void GenerateFiles(int filesCount, int contentLength)
+        public bool GenerateFiles(int filesCount, int contentLength)
         {
-            for (var i = 0; i < filesCount; ++i)
+            try
             {
-                var generatedFileContent = this.GenerateFileContent(contentLength);
+                for (var i = 0; i < filesCount; ++i)
+                {
+                    var generatedFileContent = this.GenerateFileContent(contentLength);
 
-                var generatedFileName = $"{Guid.NewGuid()}{this.FileExtension}";
+                    var generatedFileName = $"{Guid.NewGuid()}{this.FileExtension}";
 
-                this.WriteBytesToFile(generatedFileName, generatedFileContent);
+                    this.WriteBytesToFile(generatedFileName, generatedFileContent);
+                }
+                return true;
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
         
         public abstract string WorkingDirectory { get; }
